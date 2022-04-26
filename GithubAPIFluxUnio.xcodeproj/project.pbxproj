@@ -24,6 +24,7 @@
 		3D56D3E12818252400A130C2 /* Unio in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3E02818252400A130C2 /* Unio */; };
 		3D56D3E4281836CC00A130C2 /* RepositoryListTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3E3281836CC00A130C2 /* RepositoryListTableDataSource.swift */; };
 		3D56D3E62818372B00A130C2 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3E52818372B00A130C2 /* RepositoryCell.swift */; };
+		3D56D3E9281840EC00A130C2 /* DispatchRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3D56D3C1281811A300A130C2 /* GithubAPIFluxUnioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIFluxUnioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D56D3E3281836CC00A130C2 /* RepositoryListTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListTableDataSource.swift; sourceTree = "<group>"; };
 		3D56D3E52818372B00A130C2 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRelay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		3D56D39D281811A100A130C2 /* GithubAPIFluxUnio */ = {
 			isa = PBXGroup;
 			children = (
+				3D56D3E728183F2F00A130C2 /* Flux */,
 				3D56D3E2281836B700A130C2 /* View */,
 				3D56D39E281811A100A130C2 /* AppDelegate.swift */,
 				3D56D3A0281811A100A130C2 /* SceneDelegate.swift */,
@@ -158,6 +161,14 @@
 				3D56D3E52818372B00A130C2 /* RepositoryCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3D56D3E728183F2F00A130C2 /* Flux */ = {
+			isa = PBXGroup;
+			children = (
+				3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */,
+			);
+			path = Flux;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D56D3E62818372B00A130C2 /* RepositoryCell.swift in Sources */,
+				3D56D3E9281840EC00A130C2 /* DispatchRelay.swift in Sources */,
 				3D56D3A3281811A100A130C2 /* RepositoryListViewController.swift in Sources */,
 				3D56D3E4281836CC00A130C2 /* RepositoryListTableDataSource.swift in Sources */,
 				3D56D39F281811A100A130C2 /* AppDelegate.swift in Sources */,
