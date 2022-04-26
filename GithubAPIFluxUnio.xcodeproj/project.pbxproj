@@ -25,6 +25,12 @@
 		3D56D3E4281836CC00A130C2 /* RepositoryListTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3E3281836CC00A130C2 /* RepositoryListTableDataSource.swift */; };
 		3D56D3E62818372B00A130C2 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3E52818372B00A130C2 /* RepositoryCell.swift */; };
 		3D56D3E9281840EC00A130C2 /* DispatchRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */; };
+		3D56D3EB2818490900A130C2 /* RepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3EA2818490900A130C2 /* RepositoryAction.swift */; };
+		3D56D3EF2818495D00A130C2 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3EE2818495D00A130C2 /* APIClient.swift */; };
+		3D56D3F22818511300A130C2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3F12818511300A130C2 /* Moya */; };
+		3D56D3F42818511300A130C2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3F32818511300A130C2 /* RxMoya */; };
+		3D56D3F7281852E500A130C2 /* ApiTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3F6281852E500A130C2 /* ApiTargetType.swift */; };
+		3D56D3F92818551D00A130C2 /* RepositoryTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,10 @@
 		3D56D3E3281836CC00A130C2 /* RepositoryListTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListTableDataSource.swift; sourceTree = "<group>"; };
 		3D56D3E52818372B00A130C2 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRelay.swift; sourceTree = "<group>"; };
+		3D56D3EA2818490900A130C2 /* RepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryAction.swift; sourceTree = "<group>"; };
+		3D56D3EE2818495D00A130C2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3D56D3F6281852E500A130C2 /* ApiTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetType.swift; sourceTree = "<group>"; };
+		3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTargetType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,8 @@
 				3D56D3D22818249000A130C2 /* RxCocoa in Frameworks */,
 				3D56D3D62818249000A130C2 /* RxSwift in Frameworks */,
 				3D56D3D02818249000A130C2 /* RxBlocking in Frameworks */,
+				3D56D3F22818511300A130C2 /* Moya in Frameworks */,
+				3D56D3F42818511300A130C2 /* RxMoya in Frameworks */,
 				3D56D3E12818252400A130C2 /* Unio in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +130,8 @@
 		3D56D39D281811A100A130C2 /* GithubAPIFluxUnio */ = {
 			isa = PBXGroup;
 			children = (
+				3D56D3F5281852D800A130C2 /* TargetType */,
+				3D56D3ED2818494D00A130C2 /* Util */,
 				3D56D3E728183F2F00A130C2 /* Flux */,
 				3D56D3E2281836B700A130C2 /* View */,
 				3D56D39E281811A100A130C2 /* AppDelegate.swift */,
@@ -166,9 +180,35 @@
 		3D56D3E728183F2F00A130C2 /* Flux */ = {
 			isa = PBXGroup;
 			children = (
+				3D56D3EC2818491700A130C2 /* Repository */,
 				3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */,
 			);
 			path = Flux;
+			sourceTree = "<group>";
+		};
+		3D56D3EC2818491700A130C2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3D56D3EA2818490900A130C2 /* RepositoryAction.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3D56D3ED2818494D00A130C2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3D56D3EE2818495D00A130C2 /* APIClient.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		3D56D3F5281852D800A130C2 /* TargetType */ = {
+			isa = PBXGroup;
+			children = (
+				3D56D3F6281852E500A130C2 /* ApiTargetType.swift */,
+				3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */,
+			);
+			path = TargetType;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +234,8 @@
 				3D56D3D52818249000A130C2 /* RxSwift */,
 				3D56D3DD2818250500A130C2 /* Action */,
 				3D56D3E02818252400A130C2 /* Unio */,
+				3D56D3F12818511300A130C2 /* Moya */,
+				3D56D3F32818511300A130C2 /* RxMoya */,
 			);
 			productName = GithubAPIFluxUnio;
 			productReference = 3D56D39B281811A100A130C2 /* GithubAPIFluxUnio.app */;
@@ -274,6 +316,7 @@
 				3D56D3CE2818249000A130C2 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				3D56D3DC2818250400A130C2 /* XCRemoteSwiftPackageReference "Action" */,
 				3D56D3DF2818252400A130C2 /* XCRemoteSwiftPackageReference "Unio" */,
+				3D56D3F02818511300A130C2 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 3D56D39C281811A100A130C2 /* Products */;
 			projectDirPath = "";
@@ -317,10 +360,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D56D3F92818551D00A130C2 /* RepositoryTargetType.swift in Sources */,
 				3D56D3E62818372B00A130C2 /* RepositoryCell.swift in Sources */,
 				3D56D3E9281840EC00A130C2 /* DispatchRelay.swift in Sources */,
 				3D56D3A3281811A100A130C2 /* RepositoryListViewController.swift in Sources */,
+				3D56D3EF2818495D00A130C2 /* APIClient.swift in Sources */,
 				3D56D3E4281836CC00A130C2 /* RepositoryListTableDataSource.swift in Sources */,
+				3D56D3EB2818490900A130C2 /* RepositoryAction.swift in Sources */,
+				3D56D3F7281852E500A130C2 /* ApiTargetType.swift in Sources */,
 				3D56D39F281811A100A130C2 /* AppDelegate.swift in Sources */,
 				3D56D3A1281811A100A130C2 /* SceneDelegate.swift in Sources */,
 			);
@@ -680,6 +727,14 @@
 				kind = branch;
 			};
 		};
+		3D56D3F02818511300A130C2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -717,6 +772,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3D56D3DF2818252400A130C2 /* XCRemoteSwiftPackageReference "Unio" */;
 			productName = Unio;
+		};
+		3D56D3F12818511300A130C2 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D56D3F02818511300A130C2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		3D56D3F32818511300A130C2 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D56D3F02818511300A130C2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
