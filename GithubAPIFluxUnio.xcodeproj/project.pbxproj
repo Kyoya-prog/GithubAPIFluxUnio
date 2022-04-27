@@ -31,6 +31,8 @@
 		3D56D3F42818511300A130C2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3F32818511300A130C2 /* RxMoya */; };
 		3D56D3F7281852E500A130C2 /* ApiTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3F6281852E500A130C2 /* ApiTargetType.swift */; };
 		3D56D3F92818551D00A130C2 /* RepositoryTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */; };
+		3D56D3FB281868E400A130C2 /* RepositoryDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3FA281868E400A130C2 /* RepositoryDispatcher.swift */; };
+		3D56D3FD281868F500A130C2 /* RepositoriesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3FC281868F500A130C2 /* RepositoriesStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,8 @@
 		3D56D3EE2818495D00A130C2 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		3D56D3F6281852E500A130C2 /* ApiTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTargetType.swift; sourceTree = "<group>"; };
 		3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTargetType.swift; sourceTree = "<group>"; };
+		3D56D3FA281868E400A130C2 /* RepositoryDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDispatcher.swift; sourceTree = "<group>"; };
+		3D56D3FC281868F500A130C2 /* RepositoriesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				3D56D3EA2818490900A130C2 /* RepositoryAction.swift */,
+				3D56D3FA281868E400A130C2 /* RepositoryDispatcher.swift */,
+				3D56D3FC281868F500A130C2 /* RepositoriesStore.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -366,6 +372,8 @@
 				3D56D3A3281811A100A130C2 /* RepositoryListViewController.swift in Sources */,
 				3D56D3EF2818495D00A130C2 /* APIClient.swift in Sources */,
 				3D56D3E4281836CC00A130C2 /* RepositoryListTableDataSource.swift in Sources */,
+				3D56D3FB281868E400A130C2 /* RepositoryDispatcher.swift in Sources */,
+				3D56D3FD281868F500A130C2 /* RepositoriesStore.swift in Sources */,
 				3D56D3EB2818490900A130C2 /* RepositoryAction.swift in Sources */,
 				3D56D3F7281852E500A130C2 /* ApiTargetType.swift in Sources */,
 				3D56D39F281811A100A130C2 /* AppDelegate.swift in Sources */,

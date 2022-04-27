@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 struct RepositoryTargetType: ApiTargetType {
-    typealias Response = Repository
+    typealias Response = [Repository]
 
     let keyword:String
 
