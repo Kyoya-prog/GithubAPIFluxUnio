@@ -3,7 +3,7 @@ import Moya
 import RxSwift
 
 protocol ApiClientInterface {
-    func request<T:ApiTargetType>(_ request:T)->Observable<T.Response>
+    func request<T:ApiTargetType>(_ request:T)->Single<T.Response>
 }
 
 class ApiClient: ApiClientInterface {
@@ -11,8 +11,8 @@ class ApiClient: ApiClientInterface {
 
     static let shared = ApiClient()
 
-    func request<T:ApiTargetType>(_ request:T)->Observable<T.Response>{
-        return Observable<T.Response>.create { observer in
+    func request<T:ApiTargetType>(_ request:T)->Single<T.Response>{
+        return Single<T.Response>.create { observer in
             let provider = MoyaProvider<T>()
             provider.request(request) { result in
                 switch result {
@@ -20,13 +20,13 @@ class ApiClient: ApiClientInterface {
                     do {
                         let decoder = JSONDecoder()
                         let model = try decoder.decode(T.Response.self, from: response.data)
-                        observer.onNext(model)
+                        observer(.success(model))
                     } catch {
-                        observer.onError(error)
+                        observer(.failure(error))
                     }
 
                 case let .failure(error):
-                    observer.onError(error)
+                    observer(.failure(error))
                 }
             }
             return Disposables.create()

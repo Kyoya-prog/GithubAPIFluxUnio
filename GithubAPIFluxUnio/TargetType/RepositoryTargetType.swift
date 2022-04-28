@@ -2,7 +2,7 @@ import Foundation
 import Moya
 
 struct RepositoryTargetType: ApiTargetType {
-    typealias Response = [Repository]
+    typealias Response = SearchRepositoryEntity
 
     let keyword:String
 
@@ -15,12 +15,12 @@ struct RepositoryTargetType: ApiTargetType {
     var task: Task { .requestParameters(parameters: ["q":keyword], encoding: URLEncoding.queryString) }
 }
 
-struct Repository:Decodable {
+struct SearchRepositoryEntity:Decodable {
     let items:[Item]
     
     struct Item:Decodable{
         let name:String
-        let description:String
+        let description:String?
         let language:String?
         let owner:Owner
         

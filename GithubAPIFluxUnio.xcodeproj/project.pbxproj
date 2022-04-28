@@ -33,6 +33,8 @@
 		3D56D3F92818551D00A130C2 /* RepositoryTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */; };
 		3D56D3FB281868E400A130C2 /* RepositoryDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3FA281868E400A130C2 /* RepositoryDispatcher.swift */; };
 		3D56D3FD281868F500A130C2 /* RepositoriesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3FC281868F500A130C2 /* RepositoriesStore.swift */; };
+		3D56D3FF2819663400A130C2 /* RepositoryViewStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3FE2819663400A130C2 /* RepositoryViewStream.swift */; };
+		3D56D4012819881400A130C2 /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D4002819881400A130C2 /* Flux.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTargetType.swift; sourceTree = "<group>"; };
 		3D56D3FA281868E400A130C2 /* RepositoryDispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDispatcher.swift; sourceTree = "<group>"; };
 		3D56D3FC281868F500A130C2 /* RepositoriesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesStore.swift; sourceTree = "<group>"; };
+		3D56D3FE2819663400A130C2 /* RepositoryViewStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewStream.swift; sourceTree = "<group>"; };
+		3D56D4002819881400A130C2 /* Flux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,7 @@
 				3D56D3A2281811A100A130C2 /* RepositoryListViewController.swift */,
 				3D56D3E3281836CC00A130C2 /* RepositoryListTableDataSource.swift */,
 				3D56D3E52818372B00A130C2 /* RepositoryCell.swift */,
+				3D56D3FE2819663400A130C2 /* RepositoryViewStream.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			children = (
 				3D56D3EC2818491700A130C2 /* Repository */,
 				3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */,
+				3D56D4002819881400A130C2 /* Flux.swift */,
 			);
 			path = Flux;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			files = (
 				3D56D3F92818551D00A130C2 /* RepositoryTargetType.swift in Sources */,
 				3D56D3E62818372B00A130C2 /* RepositoryCell.swift in Sources */,
+				3D56D3FF2819663400A130C2 /* RepositoryViewStream.swift in Sources */,
 				3D56D3E9281840EC00A130C2 /* DispatchRelay.swift in Sources */,
 				3D56D3A3281811A100A130C2 /* RepositoryListViewController.swift in Sources */,
 				3D56D3EF2818495D00A130C2 /* APIClient.swift in Sources */,
@@ -377,6 +384,7 @@
 				3D56D3EB2818490900A130C2 /* RepositoryAction.swift in Sources */,
 				3D56D3F7281852E500A130C2 /* ApiTargetType.swift in Sources */,
 				3D56D39F281811A100A130C2 /* AppDelegate.swift in Sources */,
+				3D56D4012819881400A130C2 /* Flux.swift in Sources */,
 				3D56D3A1281811A100A130C2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,14 @@
 import Foundation
 import RxSwift
 
-final class RepositoryAction{
+protocol RepositoryActionType{
+    func searchRepositories(keyword:String)
+}
+
+
+final class RepositoryAction:RepositoryActionType{
+    static let shared = RepositoryAction()
+    
     init(apiClient:ApiClientInterface = ApiClient.shared,
          dispatcher:RepositoryDispatcher = .shared){
         self.apiClient = apiClient
