@@ -2,8 +2,6 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-func void<T>(_: T) {}
-
 final class RepositoryListViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -13,7 +11,7 @@ final class RepositoryListViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        viewStream.output.searchedRepositories.map(void).bind(to: Binder(repositoriesView){ tableView,_ in
+        viewStream.output.repositories.map(void).bind(to: Binder(repositoriesView){ tableView,_ in
             tableView.reloadData()
         }).disposed(by: disposeBag)
         
@@ -71,7 +69,10 @@ final class RepositoryListViewController: UIViewController {
         let alertController = UIAlertController(title: "検索失敗",
                                                 message: message,
                                                 preferredStyle: .alert)
-
+        let closeAction = UIAlertAction(title: "閉じる", style: .cancel) {_ in
+            alertController.dismiss(animated: true)
+        }
+        alertController.addAction(closeAction)
         present(alertController, animated: true)
     }
 }

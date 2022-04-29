@@ -24,7 +24,9 @@ final class RepositoriesStore:RepositoriesStoreType{
                 return
             }
             self?.repositories.accept(items)
-        }
+        }.disposed(by: disposeBag)
+        
+        dispatcher.error.bind(to: error).disposed(by: disposeBag)
     }
 }
 

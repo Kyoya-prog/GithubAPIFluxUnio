@@ -21,8 +21,8 @@ extension RepositoryViewStream{
     }
     
     struct Output: OutputType{
-        let searchedRepositories: BehaviorRelay<[Repository]>
-        let errorOccured: PublishSubject<String>
+        let repositories: BehaviorRelay<[Repository]>
+        let errorOccured: PublishRelay<String>
     }
     
     struct State: StateType{
@@ -39,21 +39,30 @@ extension RepositoryViewStream{
         let state = dependency.state
         let extra = dependency.extra
         let flux = extra.flux
-
+        
         let searchRepositories = dependency.inputObservables.search
-        searchRepositories.subscribe { keyword in
-            flux.repositoryAction.searchRepositories(keyword: keyword)
-        }.disposed(by: disposeBag)
         
-        let errorSubject = PublishSubject<String>()
+        searchRepositories
+            .subscribe { keyword in
+                flux.repositoryAction.searchRepositories(keyword: keyword)
+            }
+            .disposed(by: disposeBag)
         
-        flux.repositoryStore.repositories.subscribe { repositories in
-            state.repositories.accept(repositories)
-        } onError: { error in
-            errorSubject.onNext(error.localizedDescription)
-        }.disposed(by: disposeBag)
-
+        let errorRelay = PublishRelay<String>()
         
-        return Output(searchedRepositories: state.repositories, errorOccured: errorSubject)
+        flux.repositoryStore
+            .error
+            .subscribe { event in
+                guard let error = event.element else { return }
+                let message = ErrorMessageBuilder.buildErrorMessage(error: error, message: "リポジトリ検索")
+                errorRelay.accept(message)
+            }.disposed(by: disposeBag)
+        
+        flux.repositoryStore
+            .repositories
+            .bind(to: state.repositories)
+            .disposed(by: disposeBag)
+        
+        return Output(repositories: state.repositories, errorOccured: errorRelay)
     }
 }
