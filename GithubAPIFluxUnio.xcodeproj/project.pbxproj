@@ -13,8 +13,6 @@
 		3D56D3A8281811A300A130C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D56D3A7281811A300A130C2 /* Assets.xcassets */; };
 		3D56D3AB281811A300A130C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D56D3A9281811A300A130C2 /* LaunchScreen.storyboard */; };
 		3D56D3B6281811A300A130C2 /* GithubAPIFluxUnioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3B5281811A300A130C2 /* GithubAPIFluxUnioTests.swift */; };
-		3D56D3C0281811A300A130C2 /* GithubAPIFluxUnioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3BF281811A300A130C2 /* GithubAPIFluxUnioUITests.swift */; };
-		3D56D3C2281811A300A130C2 /* GithubAPIFluxUnioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D3C1281811A300A130C2 /* GithubAPIFluxUnioUITestsLaunchTests.swift */; };
 		3D56D3D02818249000A130C2 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3CF2818249000A130C2 /* RxBlocking */; };
 		3D56D3D22818249000A130C2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3D12818249000A130C2 /* RxCocoa */; };
 		3D56D3D42818249000A130C2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 3D56D3D32818249000A130C2 /* RxRelay */; };
@@ -38,6 +36,10 @@
 		3D56D403281A519700A130C2 /* Void.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D402281A519700A130C2 /* Void.swift */; };
 		3D56D405281A543800A130C2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D404281A543800A130C2 /* Error.swift */; };
 		3D56D40B281D194500A130C2 /* WrappedObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D40A281D194500A130C2 /* WrappedObservable.swift */; };
+		3D56D40E281D32DD00A130C2 /* MockAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D40D281D32DD00A130C2 /* MockAPIClient.swift */; };
+		3D56D410281D352600A130C2 /* MockRepositoryAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D40F281D352600A130C2 /* MockRepositoryAction.swift */; };
+		3D56D412281D359200A130C2 /* MockRepositoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D411281D359200A130C2 /* MockRepositoryStore.swift */; };
+		3D56D414281D369800A130C2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D413281D369800A130C2 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +70,6 @@
 		3D56D3B1281811A300A130C2 /* GithubAPIFluxUnioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubAPIFluxUnioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D56D3B5281811A300A130C2 /* GithubAPIFluxUnioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIFluxUnioTests.swift; sourceTree = "<group>"; };
 		3D56D3BB281811A300A130C2 /* GithubAPIFluxUnioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubAPIFluxUnioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D56D3BF281811A300A130C2 /* GithubAPIFluxUnioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIFluxUnioUITests.swift; sourceTree = "<group>"; };
-		3D56D3C1281811A300A130C2 /* GithubAPIFluxUnioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIFluxUnioUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3D56D3E3281836CC00A130C2 /* RepositoryListTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListTableDataSource.swift; sourceTree = "<group>"; };
 		3D56D3E52818372B00A130C2 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		3D56D3E8281840EC00A130C2 /* DispatchRelay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchRelay.swift; sourceTree = "<group>"; };
@@ -84,6 +84,10 @@
 		3D56D402281A519700A130C2 /* Void.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Void.swift; sourceTree = "<group>"; };
 		3D56D404281A543800A130C2 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		3D56D40A281D194500A130C2 /* WrappedObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedObservable.swift; sourceTree = "<group>"; };
+		3D56D40D281D32DD00A130C2 /* MockAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIClient.swift; sourceTree = "<group>"; };
+		3D56D40F281D352600A130C2 /* MockRepositoryAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryAction.swift; sourceTree = "<group>"; };
+		3D56D411281D359200A130C2 /* MockRepositoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepositoryStore.swift; sourceTree = "<group>"; };
+		3D56D413281D369800A130C2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +129,6 @@
 			children = (
 				3D56D39D281811A100A130C2 /* GithubAPIFluxUnio */,
 				3D56D3B4281811A300A130C2 /* GithubAPIFluxUnioTests */,
-				3D56D3BE281811A300A130C2 /* GithubAPIFluxUnioUITests */,
 				3D56D39C281811A100A130C2 /* Products */,
 				3D56D3D9281824C500A130C2 /* Frameworks */,
 			);
@@ -160,18 +163,10 @@
 		3D56D3B4281811A300A130C2 /* GithubAPIFluxUnioTests */ = {
 			isa = PBXGroup;
 			children = (
+				3D56D40C281D32CA00A130C2 /* Mocks */,
 				3D56D3B5281811A300A130C2 /* GithubAPIFluxUnioTests.swift */,
 			);
 			path = GithubAPIFluxUnioTests;
-			sourceTree = "<group>";
-		};
-		3D56D3BE281811A300A130C2 /* GithubAPIFluxUnioUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3D56D3BF281811A300A130C2 /* GithubAPIFluxUnioUITests.swift */,
-				3D56D3C1281811A300A130C2 /* GithubAPIFluxUnioUITestsLaunchTests.swift */,
-			);
-			path = GithubAPIFluxUnioUITests;
 			sourceTree = "<group>";
 		};
 		3D56D3D9281824C500A130C2 /* Frameworks */ = {
@@ -230,6 +225,17 @@
 				3D56D3F82818551D00A130C2 /* RepositoryTargetType.swift */,
 			);
 			path = TargetType;
+			sourceTree = "<group>";
+		};
+		3D56D40C281D32CA00A130C2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3D56D40D281D32DD00A130C2 /* MockAPIClient.swift */,
+				3D56D40F281D352600A130C2 /* MockRepositoryAction.swift */,
+				3D56D411281D359200A130C2 /* MockRepositoryStore.swift */,
+				3D56D413281D369800A130C2 /* Model.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,7 +411,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D56D414281D369800A130C2 /* Model.swift in Sources */,
 				3D56D3B6281811A300A130C2 /* GithubAPIFluxUnioTests.swift in Sources */,
+				3D56D40E281D32DD00A130C2 /* MockAPIClient.swift in Sources */,
+				3D56D410281D352600A130C2 /* MockRepositoryAction.swift in Sources */,
+				3D56D412281D359200A130C2 /* MockRepositoryStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,8 +423,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D56D3C2281811A300A130C2 /* GithubAPIFluxUnioUITestsLaunchTests.swift in Sources */,
-				3D56D3C0281811A300A130C2 /* GithubAPIFluxUnioUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
