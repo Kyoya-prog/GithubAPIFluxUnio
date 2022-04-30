@@ -22,8 +22,10 @@ extension RepositoryViewStream{
     }
     
     struct Output: OutputType{
+        let shouldSearchRepositories: PublishRelay<Void>
+        let didEndSearchRepositories: PublishRelay<Void>
         let repositories: BehaviorRelay<[Repository]>
-        let errorOccured: PublishRelay<String>
+        let errorOccurred: PublishRelay<String>
     }
     
     struct State: StateType{
@@ -62,7 +64,27 @@ extension RepositoryViewStream{
             .bind(to: state.repositories)
             .disposed(by: disposeBag)
         
-        return Output(repositories: state.repositories, errorOccured: errorRelay)
+        let shouldSearchRepositories = PublishRelay<Void>()
+        
+//        searchRepositories.map(void).bind(to: shouldSearchRepositories).disposed(by: disposeBag)
+        searchRepositories.subscribe { _ in
+            shouldSearchRepositories.accept(())
+        }.disposed(by: disposeBag)
+        
+        let didEndSearchRepositories = PublishRelay<Void>()
+        
+        
+        Observable
+            .merge(
+                flux.repositoryStore.repositories.map{ $0 as AnyObject},
+                flux.repositoryStore.error.map{ $0 as AnyObject}
+            )
+            .map(void)
+            .bind(to: didEndSearchRepositories)
+            .disposed(by: disposeBag)
+        
+        
+        return Output(shouldSearchRepositories:shouldSearchRepositories, didEndSearchRepositories: didEndSearchRepositories, repositories: state.repositories, errorOccurred: errorRelay)
     }
 }
 

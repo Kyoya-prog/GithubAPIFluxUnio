@@ -15,7 +15,7 @@ final class RepositoryListViewController: UIViewController {
             tableView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewStream.output.errorOccured.subscribe { errorString in
+        viewStream.output.errorOccurred.subscribe { errorString in
             self.presentErrorAlert(errorString)
         }.disposed(by: disposeBag)
         
@@ -24,8 +24,13 @@ final class RepositoryListViewController: UIViewController {
             self?.searchBar.resignFirstResponder()
         }.disposed(by: disposeBag)
 
-
-
+        viewStream.output.shouldSearchRepositories.bind(to: Binder(self){[weak self] _,_  in
+            self?.indicator.startAnimating()
+        }).disposed(by: disposeBag)
+        
+        viewStream.output.didEndSearchRepositories.bind(to: Binder(self){[weak self]_,_ in
+            self?.indicator.stopAnimating()
+        }).disposed(by: disposeBag)
     }
     
     required init?(coder: NSCoder) {
@@ -43,6 +48,8 @@ final class RepositoryListViewController: UIViewController {
     
     private let searchBar = UISearchBar()
     
+    private let indicator = UIActivityIndicatorView()
+    
     private lazy var dataSource = RepositoryListTableDataSource(viewStream: viewStream)
     
     private let disposeBag = DisposeBag()
@@ -53,15 +60,19 @@ final class RepositoryListViewController: UIViewController {
         self.navigationItem.titleView = searchBar
         
         repositoriesView.translatesAutoresizingMaskIntoConstraints = false
-        repositoriesView.register(RepositoryCell.self, forCellReuseIdentifier: RepositoryCell.reuseIdentifier)
-        repositoriesView.reloadData()
         view.addSubview(repositoriesView)
+        
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(indicator)
         
         NSLayoutConstraint.activate([
             repositoriesView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             repositoriesView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             repositoriesView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            repositoriesView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            repositoriesView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
