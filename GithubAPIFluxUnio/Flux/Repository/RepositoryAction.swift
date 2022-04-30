@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol RepositoryActionType{
-    func searchRepositories(keyword:String)
+    func searchRepositories(keyword:String)->Observable<Void>
 }
 
 
@@ -22,12 +22,14 @@ final class RepositoryAction:RepositoryActionType{
         self.dispatcher = dispatcher
     }
     
-    func searchRepositories(keyword:String){
+    func searchRepositories(keyword:String)->Observable<Void>{
         apiClient.request(RepositoryTargetType(keyword: keyword)).subscribe {[weak self] repositories in
             self?.dispatcher.updateRepositories.dispatch(repositories)
-        } onFailure: {[weak self] error in
+        } onError: {[weak self] error in
             self?.dispatcher.error.dispatch(error)
         }.disposed(by: disposeBag)
+        
+        return Observable.just(())
     }
     
     private let apiClient: ApiClientInterface

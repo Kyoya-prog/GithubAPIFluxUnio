@@ -1,6 +1,7 @@
 import RxSwift
 import RxRelay
 import Unio
+import Action
 
 protocol RepositoryViewStreamProtocol: AnyObject{
     var input:InputWrapper<RepositoryViewStream.Input> {get}
@@ -31,6 +32,7 @@ extension RepositoryViewStream{
     
     struct Extra: ExtraType{
         let flux:Flux
+        let searchKeywordAction: Action<String,Void>
     }
 }
 
@@ -42,10 +44,7 @@ extension RepositoryViewStream{
         
         let searchRepositories = dependency.inputObservables.search
         
-        searchRepositories
-            .subscribe { keyword in
-                flux.repositoryAction.searchRepositories(keyword: keyword)
-            }
+        searchRepositories.bind(to: extra.searchKeywordAction.inputs)
             .disposed(by: disposeBag)
         
         let errorRelay = PublishRelay<String>()
@@ -64,5 +63,17 @@ extension RepositoryViewStream{
             .disposed(by: disposeBag)
         
         return Output(repositories: state.repositories, errorOccured: errorRelay)
+    }
+}
+
+extension RepositoryViewStream.Extra {
+    init(flux:Flux){
+        self.flux = flux
+        
+        let repositoryAction = flux.repositoryAction
+        
+        self.searchKeywordAction = Action{ keyword in
+            repositoryAction.searchRepositories(keyword: keyword)
+        }
     }
 }
