@@ -15,6 +15,8 @@ struct RepositoryTargetType: ApiTargetType {
     var task: Task { .requestParameters(parameters: ["q":keyword], encoding: URLEncoding.queryString) }
 }
 
+typealias Repository = SearchRepositoryEntity.Item
+
 struct SearchRepositoryEntity:Decodable {
     let items:[Item]
     

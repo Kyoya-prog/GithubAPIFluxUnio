@@ -24,7 +24,7 @@ final class RepositoryAction:RepositoryActionType{
     
     func searchRepositories(keyword:String)->Observable<Void>{
         apiClient.request(RepositoryTargetType(keyword: keyword)).subscribe {[weak self] repositories in
-            self?.dispatcher.updateRepositories.dispatch(repositories)
+            self?.dispatcher.updateRepositories.dispatch(repositories.items)
         } onError: {[weak self] error in
             self?.dispatcher.error.dispatch(error)
         }.disposed(by: disposeBag)

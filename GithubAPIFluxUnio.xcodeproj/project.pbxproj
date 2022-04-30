@@ -37,6 +37,7 @@
 		3D56D4012819881400A130C2 /* Flux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D4002819881400A130C2 /* Flux.swift */; };
 		3D56D403281A519700A130C2 /* Void.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D402281A519700A130C2 /* Void.swift */; };
 		3D56D405281A543800A130C2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D404281A543800A130C2 /* Error.swift */; };
+		3D56D40B281D194500A130C2 /* WrappedObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D56D40A281D194500A130C2 /* WrappedObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		3D56D4002819881400A130C2 /* Flux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flux.swift; sourceTree = "<group>"; };
 		3D56D402281A519700A130C2 /* Void.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Void.swift; sourceTree = "<group>"; };
 		3D56D404281A543800A130C2 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		3D56D40A281D194500A130C2 /* WrappedObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				3D56D3EE2818495D00A130C2 /* APIClient.swift */,
 				3D56D402281A519700A130C2 /* Void.swift */,
 				3D56D404281A543800A130C2 /* Error.swift */,
+				3D56D40A281D194500A130C2 /* WrappedObservable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				3D56D3FF2819663400A130C2 /* RepositoryViewStream.swift in Sources */,
 				3D56D3E9281840EC00A130C2 /* DispatchRelay.swift in Sources */,
 				3D56D3A3281811A100A130C2 /* RepositoryListViewController.swift in Sources */,
+				3D56D40B281D194500A130C2 /* WrappedObservable.swift in Sources */,
 				3D56D3EF2818495D00A130C2 /* APIClient.swift in Sources */,
 				3D56D3E4281836CC00A130C2 /* RepositoryListTableDataSource.swift in Sources */,
 				3D56D3FB281868E400A130C2 /* RepositoryDispatcher.swift in Sources */,
